@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+// COMPONENTE RAIZ
 @Component({
   selector: 'app-root',
   standalone: true,

@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="login-box">
+      <h1>¡Bienvenido de nuevo!</h1>
+      <p>Por favor, ingresa a tu cuenta</p>
+      <form (ngSubmit)="onSubmit()">
+        <div class="input-group">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" [(ngModel)]="email" name="email" placeholder="Ingresa tu correo electrónico" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Ingresa tu contraseña" required>
+        </div>
+        <div class="actions">
+          <button type="submit" class="btn">Ingresar</button>
+          <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+        </div>
+      </form>
+      <p class="signup">
+        ¿No tienes una cuenta? <a href="#">Regístrate</a>
+      </p>
+    </div>
+  </div>
+  

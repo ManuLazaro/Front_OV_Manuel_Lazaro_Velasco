@@ -2,8 +2,8 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #2ecc71, #27ae60); /* Fondo verde */
-    color: #fff;
+    background: linear-gradient(135deg, #A8DADC, #457B9D); /* Fondo azul suave */
+    color: #f1faee;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,9 +22,9 @@ body {
 
 /* Cuadro de login */
 .login-box {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15); /* Fondo semitransparente */
     border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     padding: 40px 30px;
     text-align: center;
     width: 100%;
@@ -35,13 +35,13 @@ body {
 .login-box h1 {
     font-size: 2.2rem;
     margin-bottom: 10px;
-    color: #ffffff;
+    color: #f1faee;
 }
 
 /* Subtexto */
 .login-box p {
     margin-bottom: 20px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(241, 250, 238, 0.9);
     font-size: 1rem;
 }
 
@@ -55,22 +55,23 @@ body {
     font-size: 0.9rem;
     margin-bottom: 8px;
     display: block;
-    color: #ddd;
+    color: #e9ecef; /* Color gris claro */
 }
 
 .input-group input {
     width: 100%;
     padding: 10px 12px;
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 6px;
     font-size: 1rem;
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
+    background: rgba(255, 255, 255, 0.25); /* Fondo más suave */
+    color: #f1faee;
     outline: none;
 }
 
 .input-group input:focus {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.4);
+    border-color: #a8dadc; /* Color de borde en focus */
 }
 
 /* Acciones */
@@ -85,25 +86,25 @@ body {
     padding: 10px 20px;
     border: none;
     border-radius: 6px;
-    background-color: #27ae60; /* Botón verde */
-    color: #fff;
+    background-color: #457b9d; /* Botón azul más oscuro */
+    color: #f1faee;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .actions .btn:hover {
-    background-color: #1e8e51;
+    background-color: #1d3557; /* Azul más oscuro al pasar el mouse */
 }
 
 .actions .forgot-password {
     font-size: 0.85rem;
-    color: #ddd;
+    color: #a8dadc;
     text-decoration: none;
 }
 
 .actions .forgot-password:hover {
-    color: #fff;
+    color: #f1faee;
     text-decoration: underline;
 }
 
@@ -111,16 +112,16 @@ body {
 .signup {
     margin-top: 20px;
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(241, 250, 238, 0.9);
 }
 
 .signup a {
-    color: #fff;
+    color: #a8dadc;
     text-decoration: underline;
 }
 
 .signup a:hover {
-    color: #ffcc00;
+    color: #f4a261; /* Color anaranjado suave */
 }
 
 /* Responsividad */
