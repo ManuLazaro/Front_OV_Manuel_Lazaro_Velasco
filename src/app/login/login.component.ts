@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,9 +13,13 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
 
+  constructor(private router: Router) {} // Inyección del servicio Router
+
+
   onSubmit() {
     console.log('Correo:', this.email);
     console.log('Contraseña:', this.password);
-    // Aquí puedes agregar lógica de autenticación.
+   
+    this.router.navigate(['/home']);
   }
 }

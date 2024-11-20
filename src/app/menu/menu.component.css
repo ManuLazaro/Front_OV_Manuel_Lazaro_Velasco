@@ -1,0 +1,155 @@
+/************************* LEFT MENU ******************************/
+#app-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 74px; /* Ancho de la barra cuando está colapsada */
+    transition: width .4s cubic-bezier(.645, .045, .355, 1);
+    height: 100%;
+    background-color: rgb(44, 44, 44); 
+    z-index: 9999;
+    overflow: hidden;
+    
+    /* Menu Size on Hover */
+    &:hover {
+        width: 350px; /* Ancho de la barra cuando se despliega */
+        background-color: rgba(44, 44, 44, 0.705); 
+    }
+
+    ul {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        width: 250px;
+        transform: translateY(-50%);
+        li {
+            display: table;
+            position: relative;
+            height: 55px;
+            width: 100%;
+            a {
+                white-space: nowrap;
+                display: table-cell;
+                vertical-align: middle;
+                font-style: normal;
+                color: grey;
+                font-size: 14px;
+                line-height: 0;
+                height: 100%;
+                position: relative;
+                padding-left: 63px;
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.288);
+                    text-decoration: none;
+                    cursor: pointer;
+                    transition: background 0.5s;
+                }
+
+                /* Menu Icon Styles */
+                .nav-icn {
+                    width: 36px;
+                    height: 20px;
+                    text-align: center;
+                    margin: 0;
+                    position: absolute;
+                    left: 0;
+                    transform: translateY(-50%);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: 2px;
+                    .svg-icn {
+                        position: relative;
+                        left: 6px;
+                        svg {
+                            height: 20px;
+                            width: 100%;
+                            fill: rgb(0, 0, 0);
+                            path {
+                                fill: rgb(0, 0, 0);
+                            }
+                        }
+                    }
+                }
+            
+                /* Menu Text Styles */
+                .txt-gnl {
+                    padding-left: 0px;
+                    font-size: 16px;
+                    flex-grow: 1;
+                    border-left:10px solid #ee0c0c; /* Inicialmente invisible */
+                    transition: border-left 0.4s ease;
+                }
+
+                &.active {
+                    background: #fd0000da; /* Fondo rojo cuando está activo */
+                    color: white;
+                    text-decoration: none;
+                    .nav-icn {
+                        .svg-icn {
+                            svg {
+                                fill: white;
+                                path {
+                                    fill: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            i {
+                position: absolute;
+                top: 0;
+                right: 12px;
+                font-size: 20px;
+                line-height: 55px;
+                color: #eee;
+                cursor: pointer;
+            }
+            &.subitems {
+                ul {
+                    position: absolute;
+                    top: 0;
+                    left: 250px;
+                    width: 0;
+                    background: rgba(100,100,100,.95); /* Gris con opacidad para los submenús */
+                    transform: initial;
+                    transition: width .4s cubic-bezier(.645, .045, .355, 1);
+                    overflow: hidden;
+                    li {
+                        height: 35px;
+                        a {
+                            padding-left: 0;
+                            color: #ddd;
+                        }
+                        .nav-icn {
+                            display: none;
+                        }
+                    }
+                }
+                &:hover {
+                    ul {
+                        width: 205px;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Close Mobile Menu Icon */
+    .close-nav-icn {
+        display: none;
+        cursor: pointer;
+    }
+    .nav-txt{
+        color: #ffffff;
+        padding-left: 15px;
+        font-size: 16px;
+        flex-grow: 1;
+        border-left: 5px solid #000000;
+        transition: border-left 0.4s ease;
+    }
+}
+
+/*******************************************************************/

@@ -1,0 +1,109 @@
+<body>
+  <nav class="app-menu" id="app-menu">
+    <ul class="nav-menu">
+        <li permission permission-only="['Admin', 'Distributor', 'Property', 'Council', 'Engineer', 'Owner', 'Community', 'Maintainer']">
+            <a ui-sref="Home" ui-sref-active="active" ng-click="menuVM.hideMenu()">
+                <span class="nav-icn">
+                    <div class="btn-show-style">
+                        <!-- <img src="assets\images\empleado.svg" class="svg-icn" alt="Icono"> -->
+                    </div>
+                    
+                </span>
+                <div class="txt-gnl">
+                    <span class="nav-txt">
+                        Inicio
+                    </span>
+                </div>
+            </a>
+        </li>
+        <li permission permission-only="['Admin', 'Distributor', 'Property', 'Community', 'Maintainer']">
+            <a ui-sref="buildings" ui-sref-active="active" ng-click="menuVM.hideMenu()">
+                <span class="nav-icn">
+                    <div class="btn-show-style">
+                        <div ng-include="'assets/icons/building.svg'" class="svg-icn"></div>
+                    </div>
+                </span>
+                <div class="txt-gnl">
+                    <span class="nav-txt">
+                        Centros
+                    </span>
+                </div>
+            </a>
+        </li>
+        <li permission permission-only="['Admin', 'Distributor']">
+            <a ui-sref="admins" ui-sref-active="active" ng-click="menuVM.hideMenu()">
+                <span class="nav-icn">
+                    <div class="btn-show-style">
+                        <div ng-include="'assets/icons/user.svg'" class="svg-icn"></div>
+                    </div>
+                </span>
+                <div class="txt-gnl">
+                    <span class="nav-txt">
+                        Empleados
+                    </span>
+                </div>
+            </a>
+        </li>
+        <li permission permission-only="['Admin', 'Distributor', 'Property', 'Council', 'Community', 'Maintainer']">
+            <a ui-sref="settlements" ui-sref-active="active" ng-click="menuVM.hideMenu()">
+                <span class="nav-icn">
+                    <div class="btn-show-style">
+                        <div ng-include="'assets/icons/settlements.svg'" class="svg-icn"></div>
+                    </div>
+                </span>
+                <div class="txt-gnl">
+                    <span class="nav-txt">
+                        Pagos
+                    </span>
+                </div>
+            </a>
+        </li>
+        <li permission permission-only="['Admin', 'Distributor']">
+            <a ui-sref="workorder" ui-sref-active="active" ng-click="menuVM.hideMenu()">
+                <span class="nav-icn">
+                    <div class="btn-show-style">
+                        <div ng-include="'assets/icons/work-order.svg'" class="svg-icn"></div>
+                    </div>
+                </span>
+                <div class="txt-gnl">
+                    <span class="nav-txt">
+                        Orden de Reparacion
+                    </span>
+                </div>
+            </a>
+        </li>
+        <li permission permission-only="['Admin', 'Distributor']" permission-except="['Installation admin']">
+            <a ui-sref="warehouse" ui-sref-active="active" ng-click="menuVM.hideMenu()">
+                <span class="nav-icn">
+                    <div class="btn-show-style">
+                        <div ng-include="'assets/icons/warehouse.svg'" class="svg-icn"></div>
+                    </div>
+                </span>
+                <div class="txt-gnl">
+                    <span class="nav-txt">
+                        Inventario
+                    </span>
+                </div>
+            </a>
+        </li>
+        <li permission permission-only="['Admin', 'Distributor']" permission-except="['Installation admin']">
+            <a ui-sref="installer" ui-sref-active="active" ng-click="menuVM.hideMenu()">
+                <span class="nav-icn">
+                    <div class="btn-show-style">
+                        <div ng-include="'assets/icons/user.svg'" class="svg-icn"></div>
+                    </div>
+                </span>
+                <div class="txt-gnl">
+                    <span class="nav-txt">
+                        Clases
+                    </span>
+                </div>
+            </a>
+        </li>
+    </ul>
+    <div ng-include="'assets/icons/close.svg'" class="close-nav-icn" ng-click="menuVM.hideMenu()"></div>
+</nav>
+
+<div class="mobile-menu" ng-click="menuVM.showMenu()"></div>
+
+</body>
