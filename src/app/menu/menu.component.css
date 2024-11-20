@@ -78,12 +78,12 @@
                     padding-left: 0px;
                     font-size: 16px;
                     flex-grow: 1;
-                    border-left:10px solid #ee0c0c; /* Inicialmente invisible */
+                    border-left:10px solid #000000; /* Inicialmente invisible */
                     transition: border-left 0.4s ease;
                 }
 
                 &.active {
-                    background: #fd0000da; /* Fondo rojo cuando está activo */
+                    background: #000000da; /* Fondo rojo cuando está activo */
                     color: white;
                     text-decoration: none;
                     .nav-icn {

@@ -34,6 +34,7 @@
 .table {
     width: 100%; /* Las tablas ocupan todo el ancho disponible */
     border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
 .table th, .table td {
@@ -43,7 +44,7 @@
 }
 
 .table th {
-    background-color: #4CAF50; /* Fondo verde para los encabezados */
+    background-color: #457b9d; /* Fondo verde para los encabezados */
     color: white; /* Color blanco para el texto de los encabezados */
 }
 
@@ -74,7 +75,7 @@
     left: 0;
     width: 50%; /* La línea ocupa solo la mitad del ancho */
     height: 3px; /* Altura de la línea */
-    background-color: #4CAF50; /* Línea verde */
+    background-color: #457b9d; /* Línea verde */
     margin-left: 25%; /* Centra la línea debajo del título */
 }
 /* Media query para pantallas pequeñas */

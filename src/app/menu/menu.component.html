@@ -1,13 +1,12 @@
 <body>
   <nav class="app-menu" id="app-menu">
     <ul class="nav-menu">
-        <li permission permission-only="['Admin', 'Distributor', 'Property', 'Council', 'Engineer', 'Owner', 'Community', 'Maintainer']">
-            <a ui-sref="Home" ui-sref-active="active" ng-click="menuVM.hideMenu()">
+        <li>
+            <a [routerLink]="['/home']" routerLinkActive="active">
                 <span class="nav-icn">
                     <div class="btn-show-style">
-                        <!-- <img src="assets\images\empleado.svg" class="svg-icn" alt="Icono"> -->
+                        <!-- Icono del menú -->
                     </div>
-                    
                 </span>
                 <div class="txt-gnl">
                     <span class="nav-txt">
@@ -16,11 +15,11 @@
                 </div>
             </a>
         </li>
-        <li permission permission-only="['Admin', 'Distributor', 'Property', 'Community', 'Maintainer']">
-            <a ui-sref="buildings" ui-sref-active="active" ng-click="menuVM.hideMenu()">
+        <li>
+            <a [routerLink]="['/center']" routerLinkActive="active">
                 <span class="nav-icn">
                     <div class="btn-show-style">
-                        <div ng-include="'assets/icons/building.svg'" class="svg-icn"></div>
+                        <!-- Icono del menú -->
                     </div>
                 </span>
                 <div class="txt-gnl">

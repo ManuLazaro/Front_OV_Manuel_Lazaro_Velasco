@@ -1,15 +1,3 @@
-/* Estilo general para el fondo */
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #A8DADC, #457B9D); /* Fondo azul suave */
-    color: #f1faee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-}
 
 /* Contenedor para el cuadro de login */
 .container {
@@ -22,7 +10,7 @@ body {
 
 /* Cuadro de login */
 .login-box {
-    background: rgba(255, 255, 255, 0.15); /* Fondo semitransparente */
+    background: rgba(255, 255, 255, 0.952); /* Fondo semitransparente */
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     padding: 40px 30px;
@@ -35,13 +23,13 @@ body {
 .login-box h1 {
     font-size: 2.2rem;
     margin-bottom: 10px;
-    color: #f1faee;
+    color: #000000;
 }
 
 /* Subtexto */
 .login-box p {
     margin-bottom: 20px;
-    color: rgba(241, 250, 238, 0.9);
+    color: rgba(0, 0, 0, 0.9);
     font-size: 1rem;
 }
 
@@ -55,7 +43,7 @@ body {
     font-size: 0.9rem;
     margin-bottom: 8px;
     display: block;
-    color: #e9ecef; /* Color gris claro */
+    color: #000000; /* Color gris claro */
 }
 
 .input-group input {
@@ -64,14 +52,14 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 6px;
     font-size: 1rem;
-    background: rgba(255, 255, 255, 0.25); /* Fondo más suave */
+    background: rgba(11, 116, 148, 0.027); /* Fondo más suave */
     color: #f1faee;
     outline: none;
 }
 
 .input-group input:focus {
     background: rgba(255, 255, 255, 0.4);
-    border-color: #a8dadc; /* Color de borde en focus */
+    border-color: #2db6ec; /* Color de borde en focus */
 }
 
 /* Acciones */
@@ -99,12 +87,12 @@ body {
 
 .actions .forgot-password {
     font-size: 0.85rem;
-    color: #a8dadc;
+    color: #33979b;
     text-decoration: none;
 }
 
 .actions .forgot-password:hover {
-    color: #f1faee;
+    color: #1f6466;
     text-decoration: underline;
 }
 
@@ -112,16 +100,16 @@ body {
 .signup {
     margin-top: 20px;
     font-size: 0.9rem;
-    color: rgba(241, 250, 238, 0.9);
+    color: rgba(0, 0, 0, 0.9);
 }
 
 .signup a {
-    color: #a8dadc;
+    color: #33979b;
     text-decoration: underline;
 }
 
 .signup a:hover {
-    color: #f4a261; /* Color anaranjado suave */
+    color: #1f6466; 
 }
 
 /* Responsividad */
