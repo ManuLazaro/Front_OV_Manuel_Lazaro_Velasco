@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap');
 /* Reseteo básico de márgenes y rellenos */
 * {
     margin: 0;
@@ -8,12 +9,15 @@
 /* El contenedor principal ocupa todo el tamaño de la pantalla */
 .container {
     margin-left: 200px;
+    margin-top: 80px; /* Añadimos un margen superior para dejar espacio vacío */
+    border-radius: 16px; /* Borde redondeado */
     display: flex;
     height: 100vh; /* Ocupa toda la altura de la pantalla */
 }
 
 /* Contenedor izquierdo */
 .left-container {
+    border-radius: 16px; /* Borde redondeado */
     width: 50%; /* Ocupa el 50% del ancho de la pantalla */
     padding: 20px;
     display: flex;
@@ -24,30 +28,52 @@
 
 /* Contenedor derecho */
 .right-container {
+    display: flex;   
     width: 50%; /* Ocupa el otro 50% */
-   
+    justify-content: center;    /* Centra horizontalmente */
+    align-items: center;        /* Centra verticalmente */
+   background-color: #f1f1f1;
     padding: 20px;
     overflow-y: auto; /* Permite hacer scroll si es necesario */
 }
-
+.right-container .material-icons {
+    font-size: 188px; /* Tamaño del ícono */
+    color: #345fbb; /* Color del ícono */
+}
 /* Estilo de las tablas */
 .table {
     width: 100%; /* Las tablas ocupan todo el ancho disponible */
-    border-collapse: collapse;
+    border-collapse: collapse; /* Asegura que los bordes no se dupliquen */
     margin-bottom: 20px;
+    border-radius: 16px; /* Borde redondeado solo en el contorno de la tabla */
+    overflow: hidden; /* Oculta cualquier contenido fuera del borde redondeado */
 }
 
 .table th, .table td {
     padding: 12px; /* Relleno para las celdas */
-    border: 1px solid #ddd; /* Borde ligero para las celdas */
     text-align: left; /* Alineación de texto a la izquierda */
+    border: 1px solid #ddd; /* Línea de separación entre las columnas */
+    /* Quitar los bordes redondeados de las celdas */
+    border-radius: 0; 
 }
 
 .table th {
-    background-color: #457b9d; /* Fondo verde para los encabezados */
-    color: white; /* Color blanco para el texto de los encabezados */
+    background-color: #345fbb; /* Fondo para los encabezados */
+    color: white; /* Color del texto en los encabezados */
+    font-weight: bold; /* Texto en negrita */
 }
 
+/* Agregar una línea de separación entre las celdas de las columnas */
+.table td {
+    border-left: 1px solid #ddd; /* Borde izquierdo de cada celda (separación entre columnas) */
+}
+
+/* Eliminar la línea de separación para la primera columna */
+.table td:first-child {
+    border-left: none;
+}
+
+/* Estilo para las filas alternadas */
 .table tr:nth-child(even) {
     background-color: #f2f2f2; /* Fila gris claro para las filas pares */
 }
@@ -55,6 +81,7 @@
 .table tr:hover {
     background-color: #ddd; /* Color de fondo para filas cuando pasas el mouse por encima */
 }
+
 /* Estilo para el título de las tablas */
 .title-table {
     font-size: 2rem; /* Tamaño de la fuente más grande */
@@ -63,21 +90,22 @@
     letter-spacing: 1px; /* Espaciado entre letras */
     position: relative; /* Para poder colocar la decoración debajo */
     margin-bottom: 15px; /* Espacio debajo del título */
-    text-align: center; /* Centrado del título */
+    text-align: justify; /* Centrado del título */
     text-transform: uppercase; /* Convertir a mayúsculas */
 }
 
 /* Decoración del título con una línea moderna */
 .title-table::before {
-    content: ''; /* Contenido vacío para crear la línea */
     position: absolute;
     bottom: -5px; /* Coloca la línea justo debajo del texto */
     left: 0;
     width: 50%; /* La línea ocupa solo la mitad del ancho */
     height: 3px; /* Altura de la línea */
-    background-color: #457b9d; /* Línea verde */
+    background-color: #457b9d; /* Línea de color */
     margin-left: 25%; /* Centra la línea debajo del título */
+    content: none; /* Eliminar la línea debajo del título */
 }
+
 /* Media query para pantallas pequeñas */
 @media screen and (max-width: 768px) {
     .container {

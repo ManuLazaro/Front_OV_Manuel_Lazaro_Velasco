@@ -1,0 +1,16 @@
+/* Importa un tema de Angular Material */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+.calendar-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 10px;
+  }
+  
+  mwl-calendar-month-view {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  

@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap');
+
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #dcf0ec, #b6eee6da); 
+    background: #f7f7f7ef; 
+    font-family: 'Maven Pro';
 }

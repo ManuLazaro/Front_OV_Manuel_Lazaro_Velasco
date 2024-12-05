@@ -1,63 +1,8 @@
-<p>class works!</p>
-
-<div class="container">
-    <!-- Contenedor izquierdo -->
-    <div class="left-container">
-        <table class="table">
-            <thead>
-                <span class="title-table">Empleados</span>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Turno</th>
-                    <th>Clases</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Ejemplo</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Ejemplo</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="table">
-            <span class="title-table">Clientes</span>
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Fecha de inscripcion</th>
-                    <th>Tipo</th>
-                    <th>Estado</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Ejemplo</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>ejemplo</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- Contenedor derecho (vacío por ahora) -->
-    <div class="right-container">
-        <!-- Aquí podrías agregar otro contenido más tarde -->
-    </div>
+<app-menu></app-menu>
+<div class="calendar-container">
+  <mwl-calendar-month-view
+    [viewDate]="viewDate"
+    [events]="events"
+    (dayClicked)="dayClicked($event)">
+  </mwl-calendar-month-view>
 </div>

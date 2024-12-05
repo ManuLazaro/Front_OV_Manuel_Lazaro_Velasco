@@ -1,21 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap');
+/************************* HEADER ******************************/
+.app-header {
+    background-color: #345fbb;
+    color: white;
+    padding: 5px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Maven Pro', sans-serif;
+}
+
+.app-header .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-header h1 {
+    font-size: 20px;
+}
+
+.app-header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.app-header nav ul li {
+    margin-right: 20px;
+}
+
+.app-header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.app-header nav ul li a:hover {
+    text-decoration: underline;
+}
+
 /************************* LEFT MENU ******************************/
 #app-menu {
     position: fixed;
     top: 0;
     left: 0;
-    width: 74px; /* Ancho de la barra cuando está colapsada */
+    width: 85px; /* Ancho de la barra cuando está colapsada */
     transition: width .4s cubic-bezier(.645, .045, .355, 1);
     height: 100%;
-    background-color: rgb(44, 44, 44); 
+    background-color: rgb(255, 255, 255); 
     z-index: 9999;
     overflow: hidden;
+   
     
-    /* Menu Size on Hover */
+    /* Menu bar con mouse encima */
     &:hover {
-        width: 350px; /* Ancho de la barra cuando se despliega */
-        background-color: rgba(44, 44, 44, 0.705); 
+        width: 350px; 
+        background-color: rgba(255, 255, 255, 0.774); 
     }
-
     ul {
         position: absolute;
         top: 50%;
@@ -26,32 +72,32 @@
         li {
             display: table;
             position: relative;
-            height: 55px;
+            height: 65px;
             width: 100%;
-            a {
+            border-radius: 8px; 
+            overflow: hidden; 
+            a {/* Menu Iconos */
                 white-space: nowrap;
                 display: table-cell;
                 vertical-align: middle;
                 font-style: normal;
-                color: grey;
-                font-size: 14px;
+                color: #345fbb;
                 line-height: 0;
                 height: 100%;
                 position: relative;
-                padding-left: 63px;
-                &:hover {
-                    background-color: rgba(255, 255, 255, 0.288);
+                padding-left: 83px;
+                border-radius: inherit; 
+                &:hover { /*Mouse por encima de las opcion*/
+                    background-color: #496ebd33; 
                     text-decoration: none;
                     cursor: pointer;
                     transition: background 0.5s;
                 }
-
-                /* Menu Icon Styles */
                 .nav-icn {
                     width: 36px;
                     height: 20px;
                     text-align: center;
-                    margin: 0;
+                    margin-right: 15px; /* Separación entre el icono y el texto */
                     position: absolute;
                     left: 0;
                     transform: translateY(-50%);
@@ -59,31 +105,17 @@
                     justify-content: center;
                     align-items: center;
                     margin-left: 2px;
-                    .svg-icn {
-                        position: relative;
-                        left: 6px;
-                        svg {
-                            height: 20px;
-                            width: 100%;
-                            fill: rgb(0, 0, 0);
-                            path {
-                                fill: rgb(0, 0, 0);
-                            }
-                        }
-                    }
                 }
             
                 /* Menu Text Styles */
                 .txt-gnl {
                     padding-left: 0px;
-                    font-size: 16px;
                     flex-grow: 1;
-                    border-left:10px solid #000000; /* Inicialmente invisible */
                     transition: border-left 0.4s ease;
                 }
 
                 &.active {
-                    background: #000000da; /* Fondo rojo cuando está activo */
+                    background: #496ebda2; 
                     color: white;
                     text-decoration: none;
                     .nav-icn {
@@ -98,42 +130,7 @@
                     }
                 }
             }
-            i {
-                position: absolute;
-                top: 0;
-                right: 12px;
-                font-size: 20px;
-                line-height: 55px;
-                color: #eee;
-                cursor: pointer;
-            }
-            &.subitems {
-                ul {
-                    position: absolute;
-                    top: 0;
-                    left: 250px;
-                    width: 0;
-                    background: rgba(100,100,100,.95); /* Gris con opacidad para los submenús */
-                    transform: initial;
-                    transition: width .4s cubic-bezier(.645, .045, .355, 1);
-                    overflow: hidden;
-                    li {
-                        height: 35px;
-                        a {
-                            padding-left: 0;
-                            color: #ddd;
-                        }
-                        .nav-icn {
-                            display: none;
-                        }
-                    }
-                }
-                &:hover {
-                    ul {
-                        width: 205px;
-                    }
-                }
-            }
+
         }
     }
 
@@ -143,13 +140,53 @@
         cursor: pointer;
     }
     .nav-txt{
-        color: #ffffff;
-        padding-left: 15px;
+        color: #000000;
+        padding-left: 12px;
         font-size: 16px;
         flex-grow: 1;
-        border-left: 5px solid #000000;
+        border-left: 5px solid #345fbb;
         transition: border-left 0.4s ease;
     }
 }
+/************************* FOOTER ******************************/
+.app-footer {
+    background-color: #345fbb4d; /* Fondo azul */
+    color:#000000; /* Texto blanco */
+    padding: 5px 10px; /* Reduce el espacio interno */
+    position: fixed; /* Fijo en la parte inferior */
+    bottom: 0; /* Anclado al borde inferior */
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Capas superiores */
+    font-family: 'Maven Pro', sans-serif; /* Fuente consistente */
+    font-size: 12px; /* Letra más pequeña */
+    display: flex; /* Usamos flexbox para la disposición */
+    align-items: center; /* Centrar contenido verticalmente */
+    justify-content: space-between; /* Separa el ícono y el texto */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
 
-/*******************************************************************/
+/* Estilo del contenedor de contenido */
+.footer-content {
+    width: 100%; /* Asegura que ocupe todo el espacio horizontal */
+    display: flex; /* Disposición flexible */
+    justify-content: space-between; /* Ícono a la izquierda, texto a la derecha */
+    align-items: center; /* Centra verticalmente */
+}
+
+/* Ícono en el footer */
+.footer-icon {
+    font-size: 20px; /* Tamaño del ícono */
+    color: white; /* Ícono en blanco */
+}
+
+/* Estilo del texto */
+.footer-text {
+    text-align: right; /* Alinea a la derecha */
+    margin-left: auto; /* Empuja el texto al extremo derecho */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+
+
+

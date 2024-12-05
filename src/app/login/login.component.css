@@ -14,6 +14,7 @@
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     padding: 40px 30px;
+    border-radius: 16px; /* Borde redondeado */
     text-align: center;
     width: 100%;
     max-width: 400px;
