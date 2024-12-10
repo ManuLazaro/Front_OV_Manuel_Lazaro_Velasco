@@ -9,6 +9,7 @@ import { ClassComponent } from './class/class.component';
 import { PaymentComponent } from './payment/payment.component';
 import { OrderComponent } from './order/order.component';
 import { InventoryComponent } from './inventory/inventory.component';
+import { TableComponent } from './components/table/table.component';
 
 
 //Rutas de la aplicacion
@@ -23,4 +24,5 @@ export const routes: Routes = [
     { path: 'order', component: OrderComponent}, // Ruta para el employee
     { path: 'inventory', component: InventoryComponent}, // Ruta para el employee
     { path: 'class', component: ClassComponent}, // Ruta para la class
+    { path: 'table', component: TableComponent},
 ];

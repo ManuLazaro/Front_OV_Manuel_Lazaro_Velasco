@@ -5,6 +5,8 @@ import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 //SERVICIOS DE LA APLICACION
 export const appConfig: ApplicationConfig = {
@@ -12,8 +14,9 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
      provideRouter(routes),
       provideClientHydration(),
-       HttpClientModule,
+      importProvidersFrom(HttpClientModule, BrowserAnimationsModule),
        importProvidersFrom(RouterModule.forRoot(routes)),
        provideCharts(withDefaultRegisterables())
+
       ]
 };
