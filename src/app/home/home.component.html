@@ -1,4 +1,3 @@
-
 <app-menu></app-menu> 
   <div class="container">
       <!-- Contenedor izquierdo -->
@@ -11,23 +10,20 @@
               <thead>
                   <tr>
                       <th>Nombre</th>
-                      <th>Apellido</th>
                       <th>Turno</th>
                       <th>Clases</th>
                   </tr>
               </thead>
               <tbody>
                   <tr>
-                      <td>Ejemplo</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
+                      <td>Ramon Perez</td>
+                      <td>Mañana</td>
+                      <td>Spining</td>
                   </tr>
                   <tr>
-                      <td>Ejemplo</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
+                      <td>Jose Juan</td>
+                      <td>Tarde</td>
+                      <td>Ninguna</td>
                   </tr>
               </tbody>
           </table>
@@ -47,27 +43,83 @@
               </thead>
               <tbody>
                   <tr>
-                      <td>Ejemplo</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
+                    <td>Pepito Perez</td>
+                    <td>07/12/2024</td>
+                    <td>Pase normal</td>
+                    <td>En las instalaciones</td>
                   </tr>
                   <tr>
-                      <td>Ejemplo</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
+                    <td>Ejemplo</td>
+                    <td>07/12/2024</td>
+                    <td>Pase normal</td>
+                    <td>En las instalaciones</td>
                   </tr>
+                  <tr>
+                    <td>Raul Albiol</td>
+                    <td>07/12/2024</td>
+                    <td>Pase normal</td>
+                    <td>En las instalaciones</td>
+                </tr>
+                <tr>
+                    <td>Manuel Lazaro</td>
+                    <td>07/12/2024</td>
+                    <td>Pase Vip</td>
+                    <td>En las instalaciones</td>
+                </tr>
+                <tr>
+                    <td>Ejemplo2</td>
+                    <td>07/12/2024</td>
+                    <td>Pase normal</td>
+                    <td>En las instalaciones</td>
+                </tr>
+                <tr>
+                    <td>Pepe Perez</td>
+                    <td>07/12/2024</td>
+                    <td>Pase normal</td>
+                    <td>En las instalaciones</td>
+                </tr>
+                <tr>
+                    <td>Benitez williams</td>
+                    <td>07/12/2024</td>
+                    <td>Pase normal</td>
+                    <td>En las instalaciones</td>
+                </tr>
+                <tr>
+                    <td>Evaristo inventado</td>
+                    <td>07/12/2024</td>
+                    <td>Pase normal</td>
+                    <td>En las instalaciones</td>
+                </tr>
+                <tr>
+                    <td>Señor perez</td>
+                    <td>07/12/2024</td>
+                    <td>Pase invitacion</td>
+                    <td>En las instalaciones</td>
+                </tr>
               </tbody>
           </table>
+          <div class="separator"></div>
+          <div class="separator"></div>
+          <div class="separator"></div>
       </div>
-  
       <!-- Contenedor derecho -->
       <div class="right-container">
-        
-        <span class="material-icons">
+        <h2>Usuarios por Hora</h2>
+        <div class="separator"></div>
+        <div class="mini-separator"></div>
+        <!-- Renderizamos el gráfico solo si estamos en el navegador -->
+        <div class="chart-container">
+          <canvas baseChart
+            [data]="barChartData"
+            [options]="barChartOptions"
+            [type]="barChartType"
+            [legend]="barChartLegend">
+          </canvas>
+        </div>
+        <!-- <span class="material-icons">
             assessment
-            </span>
+            </span> -->
+            
       </div>
   </div>
   

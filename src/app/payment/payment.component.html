@@ -3,71 +3,112 @@
   <div class="container">
       <!-- Contenedor izquierdo -->
       <div class="left-container">
-          <!-- Título para la sección "Empleados" -->
-          <h2 class="title-table">Empleados</h2>
-          
-          <!-- Tabla de empleados -->
-          <table class="table">
-              <thead>
-                  <tr>
-                      <th>Nombre</th>
-                      <th>Apellido</th>
-                      <th>Turno</th>
-                      <th>Clases</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td>Ejemplo</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                  </tr>
-                  <tr>
-                      <td>Ejemplo</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                  </tr>
-              </tbody>
-          </table>
-  
-          <!-- Título para la sección "Clientes" -->
-          <h2 class="title-table">Clientes</h2>
-  
+          <h2 class="title-table">Ultimos Pagos</h2>
           <!-- Tabla de clientes -->
           <table class="table">
               <thead>
                   <tr>
                       <th>Nombre</th>
-                      <th>Fecha de inscripcion</th>
-                      <th>Tipo</th>
+                      <th>Fecha de pago</th>
+                      <th>Suscripción</th>
+                      <th>Cantidad</th>
+                      <th>Modo</th>
+                      <th>Automatico</th>
                       <th>Estado</th>
                   </tr>
               </thead>
               <tbody>
-                  <tr>
-                      <td>Ejemplo</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                  </tr>
-                  <tr>
-                      <td>Ejemplo</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                  </tr>
+                <tr>
+                    <td>Pepito Perez</td>
+                    <td>06/12/2024</td>
+                    <td>Normal</td>
+                    <td>30 $</td>
+                    <td>Tranferencia</td>
+                    <td>Si</td>
+                    <td>Pagado</td>
+                </tr>
+                <tr>
+                    <td>Ejemplo</td>
+                    <td>06/12/2024</td>
+                    <td>Normal</td>
+                    <td>30 $</td>
+                    <td>Tranferencia</td>
+                    <td>Si</td>
+                    <td>Pagado</td>
+                </tr>
+                <tr>
+                    <td>Raul Albiol</td>
+                    <td>06/12/2024</td>
+                    <td>Normal</td>
+                    <td>30 $</td>
+                    <td>Tranferencia</td>
+                    <td>Si</td>
+                    <td>Pagado</td>
+                </tr>
+                <tr>
+                    <td>Manuel Lazaro</td>
+                    <td>06/12/2024</td>
+                    <td>VIP</td>
+                    <td>50 $</td>
+                    <td>Tranferencia</td>
+                    <td>Si</td>
+                    <td>Pagado</td>
+                </tr>
+                <tr>
+                    <td>Ejemplo2</td>
+                    <td>06/12/2024</td>
+                    <td>Normal</td>
+                    <td>30 $</td>
+                    <td>Tranferencia</td>
+                    <td>Si</td>
+                    <td>Pagado</td>
+                </tr>
+                <tr>
+                    <td>Pepe Perez</td>
+                    <td>06/12/2024</td>
+                    <td>Normal</td>
+                    <td>30 $</td>
+                    <td>Tranferencia</td>
+                    <td>Si</td>
+                    <td>Pagado</td>
+                </tr>
+                <tr>
+                    <td>Benitez williams</td>
+                    <td>06/12/2024</td>
+                    <td>Normal</td>
+                    <td>30 $</td>
+                    <td>Tranferencia</td>
+                    <td>Si</td>
+                    <td>Rechazado</td>
+                </tr>
               </tbody>
           </table>
+          <div class="separator"></div>
+          <div class="separator"></div>
+          <div class="separator"></div>
       </div>
-  
       <!-- Contenedor derecho -->
       <div class="right-container">
-        
-        <span class="material-icons">
-            assessment
-            </span>
-      </div>
+        <h2>Dinero Embolsado del Último Año</h2>
+        <div class="chart-container" >
+            <canvas baseChart
+            [data]="lineChartData"
+            [options]="lineChartOptions"
+            [type]="lineChartType"
+            [legend]="lineChartLegend">
+            </canvas>
+        </div>
+        <h2>Inscripciones nuevas por Mes</h2>
+        <div class="separator"></div>
+        <div class="mini-separator"></div>
+        <div class="chart-container" >
+            <canvas baseChart
+              [data]="barChartData"
+              [options]="barChartOptions"
+              [type]="barChartType"
+              [legend]="barChartLegend">
+            </canvas>
+          </div>
+         
   </div>
   
