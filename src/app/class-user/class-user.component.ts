@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { MenuComponent } from "../menu/menu.component";
+
 @Component({
-  selector: 'app-class',
+  selector: 'app-class-user',
   standalone: true,
   imports: [MenuComponent],
-  templateUrl: './class.component.html',
-  styleUrl: './class.component.css'
+  templateUrl: './class-user.component.html',
+  styleUrl: './class-user.component.css'
 })
-export class ClassComponent {
- 
+export class ClassUserComponent {
+
 }

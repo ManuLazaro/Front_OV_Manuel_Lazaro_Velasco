@@ -28,6 +28,7 @@
 /* Contenedor derecho */
 .right-container {
     height: 100%;
+    width: 50%;
     display: flex;
     flex-direction: column; /* Centra el contenido verticalmente */
     align-items: center;      /* Centra el contenido horizontalmente */
@@ -38,6 +39,7 @@
 
 /* Contenedor del gráfico */
 .chart-container {
+    width: 100%;
     display: flex;
     justify-content: center; /* Centra el gráfico horizontalmente */
     align-items: center;     /* Centra el gráfico verticalmente */

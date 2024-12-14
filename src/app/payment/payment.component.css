@@ -16,7 +16,7 @@
 
 /* Contenedor izquierdo */
 .left-container {
-    width: 50%; /* Ocupa el 50% del ancho de la pantalla */
+    width: 50%; 
     height: 100%;
     padding: 20px;
     display: flex;
@@ -29,7 +29,7 @@
 
 /* Contenedor derecho */
 .right-container {
-    width: 100%;
+    width: 50%;
     height: 100%;
     display: flex;
     flex-direction: column; /* Centra el contenido verticalmente */
@@ -42,10 +42,10 @@
 /* Contenedor del gráfico */
 .chart-container {
     display: flex;
+    width: 80%;
     justify-content: center; /* Centra el gráfico horizontalmente */
     align-items: center;     /* Centra el gráfico verticalmente */
-    max-height: 200px;
-    height: 250px; 
+    max-height: 300px; 
 }
 
 /* Para asegurarse de que el canvas ocupe todo el espacio disponible */

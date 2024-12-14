@@ -1,16 +1,189 @@
-/* Importa un tema de Angular Material */
-@import '@angular/material/prebuilt-themes/indigo-pink.css';
+/* Estilo general */
+body {
+  margin: 0; 
+  padding: 0;
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center; 
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
 
+/* Contenedor principal */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  text-align: center;
+  background: white;
+  border-radius: 12px; /* Bordes redondeados */
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-left: 200px; 
+ 
+}
 
-.calendar-container {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 10px;
+/* Título */
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 2.2em;
+  font-weight: 600;
+}
+
+/* Tabla */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 12px; /* Bordes redondeados */
+  overflow: hidden;
+}
+
+/* Cabecera */
+.schedule-table thead th {
+  background: #007BFF;
+  color: white;
+  padding: 15px 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  border: 2px solid #ddd;
+}
+
+/* Celdas */
+.schedule-table td,
+.schedule-table th {
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  border: none;
+}
+
+/* Clases con fondo muy claro y línea en la parte superior */
+.schedule-table td.yoga {
+  background-color: rgba(168, 226, 207, 0.1); /* Fondo clarísimo para Yoga */
+}
+
+.schedule-table td.crossfit {
+  background-color: rgba(255, 138, 128, 0.1); /* Fondo clarísimo para CrossFit */
+}
+
+.schedule-table td.pilates {
+  background-color: rgba(129, 212, 250, 0.1); /* Fondo clarísimo para Pilates */
+}
+
+.schedule-table td.zumba {
+  background-color: rgba(255, 241, 118, 0.1); /* Fondo clarísimo para Zumba */
+}
+
+.schedule-table td.spinning {
+  background-color: rgba(255, 171, 145, 0.1); /* Fondo clarísimo para Spinning */
+}
+
+/* Líneas de color en la parte superior de las celdas */
+.schedule-table td.yoga::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #A8E6CF; /* Yoga */
+}
+
+.schedule-table td.crossfit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #FF8A80; /* CrossFit */
+}
+
+.schedule-table td.pilates::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #81D4FA; /* Pilates */
+}
+
+.schedule-table td.zumba::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #FFF176; /* Zumba */
+}
+
+.schedule-table td.spinning::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #FFAB91; /* Spinning */
+}
+
+/* Hover para aumentar tamaño */
+.schedule-table td:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Tooltip */
+.schedule-table td[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+  max-width: 200px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+/* Duración */
+.schedule-table .duration {
+  display: block;
+  font-size: 12px;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Estilo para la columna de horas */
+.schedule-table td:first-child {
+  background: #f7f7f7;
+  font-weight: bold;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 1.8em;
   }
-  
-  mwl-calendar-month-view {
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  .schedule-table td,
+  .schedule-table th {
+      font-size: 12px;
+      padding: 10px;
   }
-  
+
+  .container {
+      margin-left: 0; /* Quita el margen en pantallas pequeñas */
+      border-left: none; /* Quita el borde izquierdo en pantallas pequeñas */
+  }
+}

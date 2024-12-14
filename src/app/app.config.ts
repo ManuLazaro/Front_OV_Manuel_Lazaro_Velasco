@@ -6,6 +6,8 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 
 //SERVICIOS DE LA APLICACION
@@ -16,7 +18,9 @@ export const appConfig: ApplicationConfig = {
       provideClientHydration(),
       importProvidersFrom(HttpClientModule, BrowserAnimationsModule),
        importProvidersFrom(RouterModule.forRoot(routes)),
-       provideCharts(withDefaultRegisterables())
-
+       provideCharts(withDefaultRegisterables()),
+       importProvidersFrom(
+        CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
+      ),
       ]
 };
