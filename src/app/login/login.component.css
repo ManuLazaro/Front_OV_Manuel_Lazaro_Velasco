@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap');
 /* Contenedor para el cuadro de login */
 .container {
     display: flex;
@@ -54,13 +54,13 @@
     border-radius: 6px;
     font-size: 1rem;
     background: rgba(11, 116, 148, 0.027); /* Fondo más suave */
-    color: #f1faee;
+    color: #2c2c2c;
     outline: none;
 }
 
 .input-group input:focus {
     background: rgba(255, 255, 255, 0.4);
-    border-color: #2db6ec; /* Color de borde en focus */
+    border-color: #345fbb ; 
 }
 
 /* Acciones */
@@ -75,7 +75,7 @@
     padding: 10px 20px;
     border: none;
     border-radius: 6px;
-    background-color: #457b9d; /* Botón azul más oscuro */
+    background-color: #345fbb ; 
     color: #f1faee;
     font-size: 1rem;
     cursor: pointer;
@@ -88,12 +88,12 @@
 
 .actions .forgot-password {
     font-size: 0.85rem;
-    color: #33979b;
+    color: #345fbb ;
     text-decoration: none;
 }
 
 .actions .forgot-password:hover {
-    color: #1f6466;
+    color: #345fbb ;
     text-decoration: underline;
 }
 
@@ -105,14 +105,68 @@
 }
 
 .signup a {
-    color: #33979b;
+    color: #345fbb ;
     text-decoration: underline;
 }
 
 .signup a:hover {
-    color: #1f6466; 
+    color: #345fbb ; 
+}
+.separator {
+    width: 100%;
+    height: 30px; 
+    background-color: transparent; 
+    border: none; 
+  }
+  .mini-separator {
+    width: 100%;
+    height: 10px; 
+    background-color: transparent; 
+    border: none; 
+  } 
+.material-icons {
+    font-size: 3rem;  /* Ajusta el tamaño del icono */
+    color: #345fbb;   /* Puedes cambiar el color si lo deseas */
 }
 
+/* Errores */
+.error-message {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 5px;
+  }
+  
+/* Estilo para los campos con error (resaltados en rojo) */
+.input-group.error input {
+border-color: red;
+background: rgba(255, 0, 0, 0.1); /* Fondo rojo suave */
+}
+
+/* Estilo para el mensaje de error con borde azul */
+.error-message-password {
+    color: red !important; /* Color del texto de error */
+    font-size: 0.7rem; 
+    font-weight: bold;
+
+}
+
+
+  /* Responsividad */
+  @media (max-width: 480px) {
+      .login-box {
+          padding: 20px;
+      }
+  
+      .login-box h1 {
+          font-size: 1.8rem;
+      }
+  
+      .actions .btn {
+          font-size: 0.9rem;
+      }
+  
+  }
+  
 /* Responsividad */
 @media (max-width: 480px) {
     .login-box {
@@ -126,4 +180,5 @@
     .actions .btn {
         font-size: 0.9rem;
     }
+
 }

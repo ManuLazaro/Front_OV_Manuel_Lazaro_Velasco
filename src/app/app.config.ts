@@ -1,6 +1,6 @@
 import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -22,5 +22,8 @@ export const appConfig: ApplicationConfig = {
        importProvidersFrom(
         CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
       ),
+      provideHttpClient(
+        withFetch() // Habilita el uso de fetch
+      )
       ]
 };

@@ -26,18 +26,19 @@
 
 /* Contenedor derecho */
 .right-container {
-    display: flex;
-    width: 50%;
     height: 100%;
+    width: 50%;
+    display: flex;
     flex-direction: column; /* Centra el contenido verticalmente */
     align-items: center;      /* Centra el contenido horizontalmente */
-    padding: 0px;
+    padding: 20px;
     background-color: #f1f1f1;
-    overflow-y: auto; /* Permite hacer scroll si es necesario */
+  
 }
 
 /* Contenedor del gráfico */
 .chart-container {
+    width: 100%;
     display: flex;
     justify-content: center; /* Centra el gráfico horizontalmente */
     align-items: center;     /* Centra el gráfico verticalmente */

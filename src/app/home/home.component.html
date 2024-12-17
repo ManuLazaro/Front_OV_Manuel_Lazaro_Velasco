@@ -1,125 +1,69 @@
-<app-menu></app-menu> 
-  <div class="container">
-      <!-- Contenedor izquierdo -->
-      <div class="left-container">
-          <!-- Título para la sección "Empleados" -->
-          <h2 class="title-table">Empleados</h2>
-          
-          <!-- Tabla de empleados -->
-          <table class="table">
-              <thead>
-                  <tr>
-                      <th>Nombre</th>
-                      <th>Turno</th>
-                      <th>Clases</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td>Ramon Perez</td>
-                      <td>Mañana</td>
-                      <td>Spining</td>
-                  </tr>
-                  <tr>
-                      <td>Jose Juan</td>
-                      <td>Tarde</td>
-                      <td>Ninguna</td>
-                  </tr>
-              </tbody>
-          </table>
-  
-          <!-- Título para la sección "Clientes" -->
-          <h2 class="title-table">Clientes</h2>
-  
-          <!-- Tabla de clientes -->
-          <table class="table">
-              <thead>
-                  <tr>
-                      <th>Nombre</th>
-                      <th>Fecha de inscripcion</th>
-                      <th>Tipo</th>
-                      <th>Estado</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                    <td>Pepito Perez</td>
-                    <td>07/12/2024</td>
-                    <td>Pase normal</td>
-                    <td>En las instalaciones</td>
-                  </tr>
-                  <tr>
-                    <td>Ejemplo</td>
-                    <td>07/12/2024</td>
-                    <td>Pase normal</td>
-                    <td>En las instalaciones</td>
-                  </tr>
-                  <tr>
-                    <td>Raul Albiol</td>
-                    <td>07/12/2024</td>
-                    <td>Pase normal</td>
-                    <td>En las instalaciones</td>
-                </tr>
-                <tr>
-                    <td>Manuel Lazaro</td>
-                    <td>07/12/2024</td>
-                    <td>Pase Vip</td>
-                    <td>En las instalaciones</td>
-                </tr>
-                <tr>
-                    <td>Ejemplo2</td>
-                    <td>07/12/2024</td>
-                    <td>Pase normal</td>
-                    <td>En las instalaciones</td>
-                </tr>
-                <tr>
-                    <td>Pepe Perez</td>
-                    <td>07/12/2024</td>
-                    <td>Pase normal</td>
-                    <td>En las instalaciones</td>
-                </tr>
-                <tr>
-                    <td>Benitez williams</td>
-                    <td>07/12/2024</td>
-                    <td>Pase normal</td>
-                    <td>En las instalaciones</td>
-                </tr>
-                <tr>
-                    <td>Evaristo inventado</td>
-                    <td>07/12/2024</td>
-                    <td>Pase normal</td>
-                    <td>En las instalaciones</td>
-                </tr>
-                <tr>
-                    <td>Señor perez</td>
-                    <td>07/12/2024</td>
-                    <td>Pase invitacion</td>
-                    <td>En las instalaciones</td>
-                </tr>
-              </tbody>
-          </table>
-          <div class="separator"></div>
-          <div class="separator"></div>
-          <div class="separator"></div>
-      </div>
-      <!-- Contenedor derecho -->
-      <div class="right-container">
-        <h2>Usuarios por Hora</h2>
-        <div class="separator"></div>
-        <div class="mini-separator"></div>
-        <!-- Renderizamos el gráfico solo si estamos en el navegador -->
-        <div class="chart-container">
-          <canvas baseChart
-            [data]="barChartData"
-            [options]="barChartOptions"
-            [type]="barChartType"
-            [legend]="barChartLegend">
-          </canvas>
-        </div>
-        <!-- <span class="material-icons">
-            assessment
-            </span> -->
-            
-      </div>
+<app-menu></app-menu>
+<div class="container">
+  <!-- Contenedor izquierdo -->
+  <div class="left-container">
+    <!-- Título para la sección "Empleados" -->
+    <h2 class="title-table">Empleados</h2>
+
+    <!-- Tabla de empleados -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Turno</th>
+          <th>Clases</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.turno }}</td>
+          <td>{{ employee.className || 'Ninguna' }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Título para la sección "Clientes" -->
+    <h2 class="title-table">Clientes</h2>
+
+    <!-- Tabla de clientes -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Fecha de inscripcion</th>
+          <th>Tipo</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let client of clients">
+          <td>{{ client.client.name }} {{ client.client.lastName }}</td>
+          <td>{{ client.client.creationDate| date: 'dd/MM/yyyy' }}</td>
+          <td>{{ client.client.subscription }}</td>
+          <td>{{ client.client.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="separator"></div>
+    <div class="separator"></div>
+    <div class="separator"></div>
   </div>
-  
+  <!-- Contenedor derecho -->
+  <div class="right-container">
+    <h2>Usuarios por Hora</h2>
+    <div class="separator"></div>
+    <div class="mini-separator"></div>
+    <!-- Renderizamos el gráfico solo si estamos en el navegador -->
+    <div class="chart-container">
+      <canvas
+        baseChart
+        [data]="barChartData"
+        [options]="barChartOptions"
+        [type]="barChartType"
+        [legend]="barChartLegend"
+      >
+      </canvas>
+    </div>
+  </div>
+</div>

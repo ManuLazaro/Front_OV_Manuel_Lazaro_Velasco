@@ -12,6 +12,7 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { TableComponent } from './components/table/table.component';
 
 
+
 //Rutas de la aplicacion
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },  // LLEVA LA RUTA BASE

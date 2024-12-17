@@ -74,12 +74,20 @@
       </div>
       <!-- Contenedor derecho -->
       <div class="right-container">
+        <h2>Usuarios por Hora</h2>
         <div class="separator"></div>
-        <div class="separator"></div>
-        <div class="separator"></div>
-        <span class="material-icons">
-            assessment
-            </span>        
+        <div class="mini-separator"></div>
+        <!-- Renderizamos el gráfico solo si estamos en el navegador -->
+        <div class="chart-container">
+          <canvas
+            baseChart
+            [data]="barChartData"
+            [options]="barChartOptions"
+            [type]="barChartType"
+            [legend]="barChartLegend"
+          >
+          </canvas>
+        </div>
       </div>
   </div>
   

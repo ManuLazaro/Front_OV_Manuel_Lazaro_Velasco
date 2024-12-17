@@ -2,18 +2,47 @@ import { Component,Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { MenuComponent } from "../menu/menu.component";
 import { ChartConfiguration, ChartOptions, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { PaymentService, PaymentDto } from '../services/payment.service'; 
 
 @Component({
   selector: 'app-payment',
   standalone: true,
-  imports: [MenuComponent,BaseChartDirective],
+  imports: [MenuComponent,BaseChartDirective, CommonModule],
   templateUrl: './payment.component.html',
   styleUrl: './payment.component.css'
 })
 export class PaymentComponent  implements OnInit {
  // Variable para determinar si estamos en el navegador o en SSR
  public isBrowser: boolean = false;
+
+payments: PaymentDto[] = [];
+
+constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private paymentService: PaymentService // Inyecta el servicio
+  ) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
+
+  ngOnInit(): void {
+    this.loadPayments(); // Carga los empleados al inicializar el componente
+    if (typeof window !== 'undefined') {
+      this.isBrowser = true;
+    }
+  }
+  loadPayments(): void {
+    this.paymentService.getAllPayments().subscribe(
+      (data) => {
+        console.log('Datos recibidos:', data); 
+        // Filtra los empleados con el rol "monitor" directamente aquí
+        this.payments = data;
+      },
+      (error) => {
+        console.error('Error al cargar los empleados', error);
+      }
+    );
+  }
 
  // Datos para la gráfica de barras de usuarios por hora
  public barChartOptions = {
@@ -100,8 +129,4 @@ export class PaymentComponent  implements OnInit {
    ]
  };
 
- ngOnInit(): void {
-   if (typeof window !== 'undefined') {
-     this.isBrowser = true;
-   }
- }}
+ }
