@@ -12,7 +12,8 @@ export class LoginService {
 
   login(email: string, password: string): Observable<any> {
     const body = { email, password };
-    return this.http.post(this.apiUrl, body, { responseType: 'text' }); 
+    return this.http.post(this.apiUrl, body); 
   }
+  
   
 }

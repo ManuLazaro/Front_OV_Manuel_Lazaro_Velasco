@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap');
+
 /* Reseteo básico de márgenes y rellenos */
 * {
     margin: 0;
@@ -28,19 +29,121 @@
 
 /* Contenedor derecho */
 .right-container {
-    display: flex;   
-    width: 50%; /* Ocupa el otro 50% */
-    justify-content: center;    /* Centra horizontalmente */
-    align-items: center;        /* Centra verticalmente */
-   background-color: #f1f1f1;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column; /* Centra el contenido verticalmente */
+    align-items: center;      /* Centra el contenido horizontalmente */
     padding: 20px;
-    overflow-y: auto; /* Permite hacer scroll si es necesario */
+    background-color: #f1f1f1;
+  
 }
-.right-container .material-icons {
-    font-size: 188px; /* Tamaño del ícono */
-    color: #345fbb; /* Color del ícono */
+/* Estilo para el botón */
+.btn-show-form {
+    background-color: #345fbb; 
+    color: white; 
+    padding: 15px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 18px; 
+    text-align: center; 
+    width: 100%; /* Se asegura de que el botón ocupe todo el ancho disponible */
+    max-width: 300px; /* Limita el tamaño máximo del botón */
+    margin-top: 0; /* Elimina cualquier margen superior adicional */
+    margin-bottom: 20px; /* Margen inferior para dar espacio entre el botón y el formulario */
 }
-/* Estilo de las tablas */
+
+.btn-show-form:hover {
+    background-color: #2d4e9a;
+}
+
+
+.form-container {
+    width: 100%; /* Asegura que ocupe el 100% del ancho */
+}
+
+/* Formulario para registrar un cliente */
+.client-form {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+}
+
+/* Campos del formulario */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Botones dentro del formulario */
+.actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    background-color: #345fbb;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #2d4e9a;
+}
+
+.cancel-btn {
+    background-color: #f44336;
+}
+
+.cancel-btn:hover {
+    background-color: #e53935;
+}
+
+/* Mensajes de éxito o error */
+.alert {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.error-message {
+    color: #f44336;
+    font-size: 14px;
+}
+
+/* Estilos de las tablas */
 .table {
     width: 100%; /* Las tablas ocupan todo el ancho disponible */
     border-collapse: collapse; /* Asegura que los bordes no se dupliquen */
@@ -105,6 +208,18 @@
     margin-left: 25%; /* Centra la línea debajo del título */
     content: none; /* Eliminar la línea debajo del título */
 }
+.separator {
+    width: 100%;
+    height: 30px; 
+    background-color: transparent; 
+    border: none; 
+  }
+.mini-separator {
+    width: 100%;
+    height: 15px; 
+    background-color: transparent; 
+    border: none; 
+  } 
 
 /* Media query para pantallas pequeñas */
 @media screen and (max-width: 768px) {

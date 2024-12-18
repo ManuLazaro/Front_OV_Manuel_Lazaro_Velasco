@@ -16,60 +16,34 @@
               </thead>
               <tbody>
                   <tr>
-                      <td>Ramon Perez</td>
+                      <td>Manuel Lazaro</td>
                       <td>Mañana</td>
-                      <td>Spining</td>
+                      <td>Yoga</td>
                   </tr>
                   <tr>
-                      <td>Jose Juan</td>
+                      <td>Pedro Juan</td>
                       <td>Tarde</td>
-                      <td>Ninguna</td>
+                      <td>Spining</td>
                   </tr>
               </tbody>
           </table>
   
           <h2 class="title-table">Empleados en plantilla</h2>
           <table class="table">
-              <thead>
-                  <tr>
-                      <th>Nombre</th>
-                      <th>Fecha de llegada</th>
-                      <th>Cargo</th>
-                      <th>Estado</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                    <td>Ramon Perez</td>
-                    <td>07/12/2024</td>
-                    <td>Monitor</td>
-                    <td>Trabajando</td>
-                  </tr>
-                  <tr>
-                    <td>Sergio Perez</td>
-                    <td>07/12/2024</td>
-                    <td>Monitor</td>
-                    <td>Trabajando</td>
-                  </tr>
-                  <tr>
-                    <td>Jose Juan</td>
-                    <td>07/12/2024</td>
-                    <td>Monitor</td>
-                    <td>Trabajando</td>
-                  </tr>
-                  <tr>
-                    <td>Raul Sanchez</td>
-                    <td>07/12/2024</td>
-                    <td>Monitor</td>
-                    <td>Vacaciones</td>
-                  </tr>
-                  <tr>
-                    <td>Miguel Algo</td>
-                    <td>07/12/2024</td>
-                    <td>Mantenimiento</td>
-                    <td>Baja Laboral</td>
-                  </tr>               
-              </tbody>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Cargo</th>
+                <th>Turno</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let employee of employees">
+                <td>{{ employee.name }} {{ employee.lastName }}</td>
+                <td>{{ employee.role }}</td>
+                <td>{{ employee.status}}</td>
+              </tr>
+            </tbody>
           </table>
       </div>
       <!-- Contenedor derecho -->

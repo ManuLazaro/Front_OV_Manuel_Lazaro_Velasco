@@ -169,6 +169,7 @@
 
 /* Estilo del contenedor de contenido */
 .footer-content {
+    margin-left: 80px;
     width: 100%; /* Asegura que ocupe todo el espacio horizontal */
     display: flex; /* Disposición flexible */
     justify-content: space-between; /* Ícono a la izquierda, texto a la derecha */
@@ -177,9 +178,10 @@
 
 /* Ícono en el footer */
 .footer-icon {
-    font-size: 20px; /* Tamaño del ícono */
-    color: #345fbb; /* Ícono en blanco */
+    color: #345fbb; 
+    margin-left: 0.8%;
 }
+
 
 /* Estilo del texto */
 .footer-text {

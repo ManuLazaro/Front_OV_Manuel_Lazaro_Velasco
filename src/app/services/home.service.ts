@@ -26,7 +26,7 @@ export interface ClientEntryDto {
   exitTime: Date;
 }
 export interface Client {
-  name: string;
+  firstName: string;
   lastName:string;
   subscription: string;
   status: string;

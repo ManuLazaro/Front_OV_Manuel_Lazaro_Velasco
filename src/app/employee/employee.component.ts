@@ -18,16 +18,19 @@ export class EmployeeComponent implements OnInit{
   public isBrowser: boolean;
 
     hours: ClientEntryHourDto[] = [];
+    employees: EmployeeDto[] = [];
   
     constructor(
       @Inject(PLATFORM_ID) private platformId: Object,
-      private clientEntryHourService: ClientEntryHourService // Inyecta el servicio
+      private clientEntryHourService: ClientEntryHourService,
+      private employeeService: EmployeeService,
     ) {
       this.isBrowser = isPlatformBrowser(this.platformId);
     }
   
     ngOnInit(): void {
       this.loadHour();
+      this.loadEmployees();
     }
   
     loadHour(): void {
@@ -42,6 +45,18 @@ export class EmployeeComponent implements OnInit{
         }
       );
     }
+    loadEmployees(): void {
+      this.employeeService.getEmployeesByRole().subscribe(
+        (data) => {
+          
+          this.employees = data;
+        },
+        (error) => {
+          console.error('Error al cargar los empleados', error);
+        }
+      );
+    }
+
     updateChartData(): void {
       // Inicializamos un arreglo de ceros para el conteo por hora
       const hourCounts = new Array(24).fill(0);

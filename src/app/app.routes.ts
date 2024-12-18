@@ -10,6 +10,8 @@ import { PaymentComponent } from './payment/payment.component';
 import { OrderComponent } from './order/order.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { TableComponent } from './components/table/table.component';
+import { RegisterComponent } from './register/register.component';
+import { ClientHomeComponent } from './client-home/client-home.component';
 
 
 
@@ -26,4 +28,6 @@ export const routes: Routes = [
     { path: 'inventory', component: InventoryComponent}, // Ruta para el employee
     { path: 'class', component: ClassComponent}, // Ruta para la class
     { path: 'table', component: TableComponent},
+    { path: 'register', component: RegisterComponent}, // ruta para el registro
+    { path: 'client-home', component: ClientHomeComponent}, // ruta vista usuario
 ];

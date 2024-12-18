@@ -103,7 +103,6 @@ canvas {
     color: #333; /* Color gris oscuro para el texto */
     letter-spacing: 1px; /* Espaciado entre letras */
     position: relative; /* Para poder colocar la decoración debajo */
-    margin-bottom: 15px; /* Espacio debajo del título */
     text-align: justify; /* Centrado del título */
     text-transform: uppercase; /* Convertir a mayúsculas */
 }
