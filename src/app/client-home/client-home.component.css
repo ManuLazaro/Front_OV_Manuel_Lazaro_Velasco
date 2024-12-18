@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap');
+
+/************************* HEADER ******************************/
+.app-header {
+    background-color: #345fbb;
+    color: white;
+    padding:10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Maven Pro', sans-serif;
+}
+
+.app-header .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.app-header h1 {
+    font-size: 20px;
+}
+
+.app-header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.app-header nav ul li {
+    margin-right: 20px;
+}
+
+.app-header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.app-header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Íconos del header */
+.header-icon {
+    color: #ffffff;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 24px;    /* Tamaño de los íconos */
+}
+
+/* El contenedor principal ocupa todo el tamaño de la pantalla */
+.container {
+    margin-left: 130px;
+    margin-top: 60px; /* Añadimos un margen superior para dejar espacio vacío */
+    display: flex;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    overflow-y: auto; /* Permite hacer scroll si las tablas exceden el alto del contenedor */
+}
+
+/* Contenedor izquierdo */
+.left-container {
+    width: 50%; /* Ocupa el 50% del ancho de la pantalla */
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Apila las tablas verticalmente */
+    gap: 20px; 
+    
+}
+
+/* Contenedor derecho */
+.right-container {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column; /* Centra el contenido verticalmente */
+    align-items: center;      /* Centra el contenido horizontalmente */
+    padding: 20px;
+    background-color: #f1f1f1;
+  
+}
+
+/* Contenedor del gráfico */
+.chart-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centra el gráfico horizontalmente */
+    align-items: center;     /* Centra el gráfico verticalmente */
+}
+
+/* Para asegurarse de que el canvas ocupe todo el espacio disponible */
+canvas {
+    width: 100% !important;  /* Asegura que el canvas ocupe todo el ancho del contenedor */
+    height: 100% !important; /* Asegura que el canvas ocupe toda la altura del contenedor */
+}
+
+.right-container .material-icons {
+    font-size: 188px; /* Tamaño del ícono */
+    color: #345fbb; /* Color del ícono */
+}
+/* Estilo de las tablas */
+.table {
+    width: 100%; /* Las tablas ocupan todo el ancho disponible */
+    border-collapse: collapse; /* Asegura que los bordes no se dupliquen */
+    margin-bottom: 20px;
+    border-radius: 16px; /* Borde redondeado solo en el contorno de la tabla */
+    overflow: hidden; /* Oculta cualquier contenido fuera del borde redondeado */
+}
+
+.table th, .table td {
+    padding: 12px; /* Relleno para las celdas */
+    text-align: left; /* Alineación de texto a la izquierda */
+    border: 1px solid #ddd; /* Línea de separación entre las columnas */
+    border-radius: 0; 
+}
+
+.table th {
+    background-color: #345fbb; /* Fondo para los encabezados */
+    color: white; /* Color del texto en los encabezados */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* Agregar una línea de separación entre las celdas de las columnas */
+.table td {
+    border-left: 1px solid #ddd; /* Borde izquierdo de cada celda (separación entre columnas) */
+}
+
+/* Eliminar la línea de separación para la primera columna */
+.table td:first-child {
+    border-left: none;
+}
+
+/* Estilo para las filas alternadas */
+.table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Fila gris claro para las filas pares */
+}
+
+.table tr:hover {
+    background-color: #ddd; /* Color de fondo para filas cuando pasas el mouse por encima */
+}
+
+/* Estilo para el título de las tablas */
+.title-table {
+    font-size: 2rem; /* Tamaño de la fuente más grande */
+    font-weight: 600; /* Peso de la fuente más ligero */
+    color: #333; /* Color gris oscuro para el texto */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    position: relative; /* Para poder colocar la decoración debajo */
+    text-align: justify; /* Centrado del título */
+    text-transform: uppercase; /* Convertir a mayúsculas */
+}
+
+/* Decoración del título con una línea moderna */
+.title-table::before {
+    position: absolute;
+    bottom: -5px; /* Coloca la línea justo debajo del texto */
+    left: 0;
+    width: 50%; /* La línea ocupa solo la mitad del ancho */
+    height: 3px; /* Altura de la línea */
+    background-color: #457b9d; /* Línea de color */
+    margin-left: 25%; /* Centra la línea debajo del título */
+    content: none; /* Eliminar la línea debajo del título */
+}
+.separator {
+    width: 100%;
+    height: 30px; 
+    background-color: transparent; 
+    border: none; 
+  }
+.mini-separator {
+    width: 100%;
+    height: 15px; 
+    background-color: transparent; 
+    border: none; 
+  } 
+/************************* FOOTER ******************************/
+.app-footer {
+    background-color: #e8f0ff; /* Fondo azul */
+    color:#000000; /* Texto blanco */
+    padding: 10px 10px; /* Reduce el espacio interno */
+    position: fixed; /* Fijo en la parte inferior */
+    bottom: 0; /* Anclado al borde inferior */
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Capas superiores */
+    font-family: 'Maven Pro', sans-serif; /* Fuente consistente */
+    font-size: 12px; /* Letra más pequeña */
+    display: flex; /* Usamos flexbox para la disposición */
+    align-items: center; /* Centrar contenido verticalmente */
+    justify-content: space-between; /* Separa el ícono y el texto */
+}
+
+/* Estilo del contenedor de contenido */
+.footer-content {
+    width: 100%; /* Asegura que ocupe todo el espacio horizontal */
+    display: flex; /* Disposición flexible */
+    justify-content: space-between; /* Ícono a la izquierda, texto a la derecha */
+    align-items: center; /* Centra verticalmente */
+}
+
+/* Ícono en el footer */
+.footer-icon {
+    color: #345fbb; 
+    margin-left: 0.8%;
+}
+
+.separator {
+    width: 100%;
+    height: 30px; 
+    background-color: transparent; 
+    border: none; 
+  }
+/* Estilo del texto */
+.footer-text {
+    text-align: right; /* Alinea a la derecha */
+    margin-left: auto; /* Empuja el texto al extremo derecho */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+/* Contenedor del formulario */
+.payment-form {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+  }
+  
+  /* Campos del formulario */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  /* Botones */
+/* Botón para mostrar el formulario */
+.btn-show-form {
+    background-color: #345fbb; 
+    color: white; 
+    padding: 15px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin-top: 20px; 
+    width: 100%; 
+    font-size: 18px; 
+    text-align: center; 
+  }
+  
+  
+  .btn-show-form:hover {
+    background-color: #2d4e9a;
+  }
+  
+  .btn-submit,
+  .btn-cancel {
+    background-color: #457b9d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .btn-submit:hover {
+    background-color: #345fbb;
+  }
+  
+  .btn-cancel {
+    background-color: #f44336;
+  }
+  
+  .btn-cancel:hover {
+    background-color: #e53935;
+  }
+  
+
+/* Estilo general para el contenedor del ícono */
+.qr-icon-container {
+    display: flex;
+    justify-content: center;  /* Centra el ícono horizontalmente */
+    align-items: center;      /* Centra el ícono verticalmente */
+    height: 50vh;             /* 50% de la altura de la pantalla */
+  }
+  
+  /* Estilo del ícono QR */
+  .QR-icon {
+    font-size: 200px;  /* Hacer el ícono más grande */
+    color: #345fbb;    /* Azul corporativo (ajusta el valor si es otro tono) */
+    transition: transform 0.5s ease, color 0.5s ease;
+  }
+  
+  /* Estilo general para el contenedor del botón */
+  .qr-button-container {
+    display: flex;
+    justify-content: center;  /* Centra el botón horizontalmente */
+    align-items: center;      /* Centra el botón verticalmente */
+    margin-top: 20px;         /* Espacio entre el ícono y el botón */
+  }
+  
+  /* Estilo para el botón */
+  .qr-button {
+    background-color: #345fbb;  /* Azul corporativo */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .qr-button:hover {
+    background-color: #153375;  /* Color de hover un poco más oscuro */
+  }
+  
+  /* Animación que hace que el ícono gire, cambie de color y tamaño */
+  /* Animación para el ícono */
+  @keyframes animateQR {
+    0% {
+      transform: rotate(0deg) scale(1); /* Estado inicial */
+      color: #007bff;  /* Azul corporativo */
+    }
+    50% {
+      transform: rotate(180deg) scale(1.5); /* A mitad del tiempo, el ícono gira y crece */
+      color: green;    /* Cambia a verde */
+    }
+    100% {
+      transform: rotate(360deg) scale(1); /* Vuelve a su estado inicial */
+      color: #007bff;  /* Azul corporativo */
+    }
+  }
+  
+  /* Clase para activar la animación */
+  .animate {
+    animation: animateQR 2s ease;  /* Duración de 2 segundos */
+  }
+  
+
+
+
+
+
+
+/* Media query para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Apila los contenedores verticalmente en pantallas pequeñas */
+    }
+
+    .left-container, .right-container {
+        width: 100%; /* Ocupan todo el ancho de la pantalla */
+    }
+}

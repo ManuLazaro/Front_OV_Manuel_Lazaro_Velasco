@@ -1,0 +1,77 @@
+<div class="separator"></div>
+<div class="separator"></div>
+<div class="container">
+  <div class="login-box">
+    <i class="material-icons" style="font-size: 50px; vertical-align: middle;">fitness_center</i>
+    <i class="material-icons" style="font-size: 50px; vertical-align: middle;">sports_soccer</i>
+    <i class="material-icons" style="font-size: 50px; vertical-align: middle;">sports_martial_arts</i>
+    <h1>¡Crea tu cuenta!</h1>
+    <p>Regístrate para comenzar</p>
+    <form (ngSubmit)="onSubmit()">
+      <div class="input-group" [ngClass]="{'error': !firstName && submitted}">
+        <label for="firstName">Nombre</label>
+        <input type="text" id="firstName" [(ngModel)]="firstName" name="firstName" placeholder="Ingresa tu nombre" required>
+        <div *ngIf="!firstName && submitted" class="error-message">Por favor, ingresa tu nombre</div>
+      </div>
+      <div class="input-group" [ngClass]="{'error': !lastName && submitted}">
+        <label for="lastName">Apellidos</label>
+        <input type="text" id="lastName" [(ngModel)]="lastName" name="lastName" placeholder="Ingresa tu apellido" required>
+        <div *ngIf="!lastName && submitted" class="error-message">Por favor, ingresa tus apellidos</div>
+      </div>
+      <div class="input-group" [ngClass]="{'error': !email && submitted || !validEmail && submitted}">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" [(ngModel)]="email" name="email" placeholder="Ingresa tu correo electrónico" required email>
+        <div *ngIf="!email && submitted" class="error-message">Por favor, ingresa tu correo electrónico</div>
+        <div *ngIf="!validEmail && submitted" class="error-message">Por favor, ingresa un correo electrónico válido</div>
+      </div>
+      <div class="input-group" [ngClass]="{'error': !password && submitted}">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Crea una contraseña" required>
+        <div *ngIf="!password && submitted" class="error-message">Por favor, crea una contraseña</div>
+      </div>
+      <div class="input-group" [ngClass]="{'error': !confirmPassword && submitted || !passwordsMatch && submitted}">
+        <label for="confirmPassword">Confirmar Contraseña</label>
+        <input type="password" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="Repite tu contraseña" required>
+        <div *ngIf="!confirmPassword && submitted" class="error-message">Por favor, confirma tu contraseña</div>
+        <div *ngIf="!passwordsMatch && submitted" class="error-message">Las contraseñas no coinciden</div>
+      </div>
+      <div class="input-group" [ngClass]="{'error': !phone && submitted}">
+        <label for="phone">Teléfono</label>
+        <input type="tel" id="phone" [(ngModel)]="phone" name="phone" placeholder="Ingresa tu número de teléfono" required>
+        <div *ngIf="!phone && submitted" class="error-message">Por favor, ingresa tu número de teléfono</div>
+      </div>
+      <div class="input-group" [ngClass]="{'error': !birthDate && submitted}">
+        <label for="birthDate">Fecha de nacimiento</label>
+        <input type="date" id="birthDate" [(ngModel)]="birthDate" name="birthDate" required>
+        <div *ngIf="!birthDate && submitted" class="error-message">Por favor, selecciona tu fecha de nacimiento</div>
+      </div>
+      <!-- Desplegable de tipo de suscripción -->
+      <div class="input-group" [ngClass]="{'error': !subscription && submitted}">
+        <label for="subscription">Tipo de Suscripción</label>
+        <select id="subscription" [(ngModel)]="subscription" name="subscription" required>
+          <option value="" disabled selected>Selecciona el tipo de suscripción</option>
+          <option value="VIP">VIP</option>
+          <option value="Normal">Normal</option>
+          <option value="Completa">Completa</option>
+        </select>
+        <div *ngIf="!subscription && submitted" class="error-message">Por favor, selecciona un tipo de suscripción</div>
+      </div>
+      <div class="actions">
+        <button type="submit" class="btn">Registrarse</button>
+      </div>
+    
+      <!-- Alerta de error o éxito -->
+      <div *ngIf="registrationError" class="alert alert-error">
+        <mat-icon>error</mat-icon> {{ registrationError }}
+      </div>
+      <div *ngIf="registrationSuccess" class="alert alert-success">
+        <mat-icon>check_circle</mat-icon> {{ registrationSuccess }}
+      </div>
+    </form>
+    
+    <div class="mini-separator"></div>
+    <p class="signup">
+      ¿Ya tienes una cuenta? <a routerLink="/login">Inicia sesión</a>
+    </p>
+  </div>
+</div>

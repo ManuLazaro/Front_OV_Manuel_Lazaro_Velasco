@@ -1,0 +1,98 @@
+<header class="app-header">
+  <div class="header-content">
+      <h1>Oficina Virtual</h1>
+      <div>
+      <span class="header-icon material-icons">fitness_center</span>
+      <span class="header-icon material-icons">sports_soccer</span>
+      <span class="header-icon material-icons">sports_martial_arts</span>
+    </div>
+      <nav>
+          <ul>
+              <li><a href="#home">Home</a></li>
+              <!-- <li><a (click)="openAbout($event)">About</a></li>
+              <li><a (click)="showContactAlert($event)">Contact</a></li> -->
+          </ul>
+      </nav>
+  </div>
+</header>
+
+<div class="container">
+  <!-- Contenedor izquierdo -->
+  <div class="left-container">
+    <!-- Título para la sección "Empleados" -->
+    <h2 class="title-table">Monitores</h2>
+    <!-- Tabla de empleados -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Turno</th>
+          <th>Clases</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.turno }}</td>
+          <td>{{ employee.className || 'Ninguna' }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="separator"></div>
+    <!-- Boton QR -->
+    <h2 class="title-table">Código QR de acceso</h2>
+
+    <!-- Contenedor del ícono QR -->
+    <div class="qr-icon-container">
+      <i class="QR-icon material-icons" id="qr-icon">qr_code</i>
+    </div>
+    <!-- Contenedor del botón -->
+    <div class="qr-button-container">
+      <button class="qr-button" (click)="animateQR()">Acceder</button>
+    </div>
+    
+    <div class="separator"></div>
+    <div class="separator"></div>
+    <div class="separator"></div>
+  </div>
+  <!-- Contenedor derecho -->
+<div class="right-container">
+  <!-- Botón para mostrar el formulario -->
+  <button class="btn-show-form" (click)="toggleForm()">Realizar Nuevo Pago</button>
+
+  <!-- Formulario para registrar un pago -->
+  <div class="payment-form" *ngIf="formVisible">
+    <h3>Registrar Pago</h3>
+    <div class="separator"></div>
+    <form (ngSubmit)="submitForm()">
+      <div class="form-group">
+        <label for="amount">Cantidad</label>
+        <input id="amount" type="number" [(ngModel)]="payment.amount" name="amount" required />
+      </div>
+
+      <div class="form-group">
+        <label for="method">Método de Pago</label>
+        <select id="method" [(ngModel)]="payment.method" name="method" required>
+          <option value="Transferencia">Transferencia</option>
+          <option value="Bizum">Bizum</option>
+          <option value="Paypal">Paypal</option>
+          <option value="Efectivo">Efectivo</option>
+        </select>
+      </div>
+      
+
+      <button type="submit" class="btn-submit">Guardar</button>
+      <button type="button" class="btn-cancel" (click)="cancelForm()">Cancelar</button>
+    </form>
+  </div>
+</div>
+
+</div>
+<footer class="app-footer" id="app-footer">
+  <div class="footer-content">
+      <span class="footer-icon material-icons">fitness_center</span>
+      <span class="footer-icon material-icons">sports_soccer</span>
+      <span class="footer-icon material-icons">sports_martial_arts</span>
+      <p class="footer-text">© 2024 Oficina Virtual. Todos los derechos reservados.</p>
+  </div>
+</footer>
